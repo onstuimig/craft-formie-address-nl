@@ -1,0 +1,25 @@
+{# @var plugin \onstuimig\FormieAddressNL\Plugin #}
+{# @var settings \onstuimig\FormieAddressNL\models\Settings #}
+
+{% import '_includes/forms.twig' as forms %}
+
+{% macro configWarning(setting) -%}
+    {% set setting = '<code>'~setting~'</code>' %}
+    {{ "This is being overridden by the {setting} config setting in your {file} config file."|t('cookiebot', {
+        setting: setting,
+        file: 'cookiebot.php'
+    })|raw }}
+{%- endmacro %}
+
+{% from _self import configWarning %}
+
+{{ forms.textField({
+    label: "Field display name"|t,
+    id: 'fieldDisplayName',
+    name: 'fieldDisplayName',
+    instructions: "Set the display name of the field in Formie."|t,
+    value: settings.fieldDisplayName,
+    disabled: 'fieldDisplayName' in overrides,
+    warning: 'fieldDisplayName' in overrides ? configWarning('fieldDisplayName'),
+    errors: settings.getErrors('fieldDisplayName')
+}) }}

@@ -1,0 +1,50 @@
+{
+  "name": "onstuimig/craft-formie-address-nl",
+  "description": "NL ready version of Formie's Address Field",
+  "version": "1.0.0",
+  "type": "craft-plugin",
+  "keywords": ["formie", "address", "nl"],
+  "license": "proprietary",
+  "support": {
+    "issues": "https://github.com/onstuimig/craft-formie-address-nl/issues?state=open",
+    "source": "https://github.com/onstuimig/craft-formie-address-nl",
+    "docs": "https://github.com/onstuimig/craft-formie-address-nl",
+    "rss": "https://github.com/onstuimig/craft-formie-address-nl/releases.atom"
+  },
+  "authors": [
+    {
+      "name": "Onstuimig",
+      "homepage": "https://onstuimig.nl"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "craftcms/cms": "^5.0.0",
+	"verbb/formie": "^3.0.0"
+  },
+  "require-dev": {
+    "craftcms/ecs": "dev-main"
+  },
+  "autoload": {
+    "psr-4": {
+      "onstuimig\\FormieAddressNL\\": "src/"
+    }
+  },
+  "extra": {
+    "handle": "formie-address-nl",
+    "name": "Formie Address NL",
+	"documentationUrl": "https://github.com/onstuimig/craft-formie-address-nl"
+  },
+  "scripts": {
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --ansi --fix",
+    "phpstan": "phpstan --memory-limit=1G"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
+  }
+}

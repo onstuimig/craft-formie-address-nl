@@ -1,0 +1,16 @@
+{
+	"name": "formie-address-nl",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "npm run frontend",
+		"build": "npm run frontend-build",
+		"frontend": "cd ./src/web/assets/frontend && npx vite build --watch",
+		"frontend-build": "cd ./src/web/assets/frontend && npx vite build"
+	},
+	"devDependencies": {
+		"@types/node": "^25.6.0",
+		"typescript": "^6.0.2",
+		"vite": "^8.0.8"
+	}
+}
